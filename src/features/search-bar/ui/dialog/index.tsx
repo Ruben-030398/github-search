@@ -32,6 +32,10 @@ const SearchBarDialog: React.FC<SearchBarDialogProps> = ({ onClose }) => {
 
   const onClearHandler = () => {
     setSearchValue('');
+
+    if(!searchValue) {
+      onClose();
+    }
   }
 
   const onSelectHandler = (value: string) => {
