@@ -105,9 +105,11 @@ const RepositoryDetails = () => {
       <div className={
         clsx(styles.repository_details__section, styles.repository_details__section_full)
       }>
-        <h2 className={styles.title_3}>
-          Description
-        </h2>
+        {data?.description && (
+          <h2 className={styles.title_3}>
+            Description
+          </h2>
+        )}
         <div className={styles.repository_details__section__row}>
           <p>
             {data?.description}
