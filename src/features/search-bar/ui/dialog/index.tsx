@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from '../../../../store';
 import { setSearch } from '../../../../store/slices/search';
 
 import styles from './styles.module.sass';
+import useUpdate from '../../../../hooks/use-update';
 
 export type SearchBarDialogProps = {
   onClose: () => void
@@ -45,7 +46,7 @@ const SearchBarDialog: React.FC<SearchBarDialogProps> = ({ onClose }) => {
     onClose();
   }
 
-  useEffect(() => {
+  useUpdate(() => {
     const debounced = debounce(() => {
       dispatch(setSearch(searchValue));
     }, 400);
