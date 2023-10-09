@@ -36,7 +36,7 @@ const RepositoryList = () => {
   }
 
   useEffect(() => {
-    navigate('/')
+    !search.value && navigate('/')
   }, [navigate, search.value])
   
   if (error && isFetchBaseQueryErrorType(error)) {
